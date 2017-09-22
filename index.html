@@ -15,6 +15,27 @@
     <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600' rel='stylesheet' type='text/css'>
     <link href="assets/css/toolkit-startup.css" rel="stylesheet">
     <link href="assets/css/application-startup.css" rel="stylesheet">
+
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      /* …curses ios, etc… */
+      @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+        body {
+          width: 1px;
+          min-width: 100%;
+          *width: 100%;
+        }
+        #stage {
+          height: 1px;
+          overflow: auto;
+          min-height: 100vh;
+          -webkit-overflow-scrolling: touch;
+        }
+      }
+    </style>
+
+
 </head>
 
 <body>
@@ -37,9 +58,9 @@
                 </nav>
             </div>
 
-            <div class="block-xs-middle pb-2">
+            <div class="block-xs-middle pb-2" style="padding-top: 40px;">
                 <div class="container">
-                    <div class="row align-items-center">
+                    <div class="row">
                         <div class="col-sm-10 col-lg-4">
                             <h1 class="block-title">Job&nbsp;search from&nbsp;the command&nbsp;line</h1>
 
