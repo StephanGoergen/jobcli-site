@@ -13,26 +13,29 @@ var open         = require('gulp-open')
 var babel        = require('gulp-babel')
 var replace      = require('gulp-replace')
 var wrapper      = require('gulp-wrapper')
+// slim setup
+var slim         = require("gulp-slim");
 
 var Paths = {
-  HERE                 : './',
-  DIST                 : 'dist',
-  DIST_TOOLKIT_JS      : 'dist/toolkit.js',
-  SCSS_TOOLKIT_SOURCES : './scss/toolkit*',
-  SCSS                 : './scss/**/**',
-  JS                   : [
-      "./js/bootstrap/util.js",
-      "./js/bootstrap/alert.js",
-      "./js/bootstrap/button.js",
-      "./js/bootstrap/carousel.js",
-      "./js/bootstrap/collapse.js",
-      "./js/bootstrap/dropdown.js",
-      "./js/bootstrap/modal.js",
-      "./js/bootstrap/tooltip.js",
-      "./js/bootstrap/popover.js",
-      "./js/bootstrap/scrollspy.js",
-      "./js/bootstrap/tab.js",
-      './js/custom/*'
+  HERE                   : './',
+  DIST                   : 'dist',
+  DIST_TOOLKIT_JS        : 'dist/toolkit.js',
+    SLIM                 : './src/slim/*.slim',
+    SCSS_TOOLKIT_SOURCES : './src/scss/toolkit*',
+    SCSS                 : './src/scss/**/**',
+  JS                     : [
+      "./src/js/bootstrap/util.js",
+      "./src/js/bootstrap/alert.js",
+      "./src/js/bootstrap/button.js",
+      "./src/js/bootstrap/carousel.js",
+      "./src/js/bootstrap/collapse.js",
+      "./src/js/bootstrap/dropdown.js",
+      "./src/js/bootstrap/modal.js",
+      "./src/js/bootstrap/tooltip.js",
+      "./src/js/bootstrap/popover.js",
+      "./src/js/bootstrap/scrollspy.js",
+      "./src/js/bootstrap/tab.js",
+      './src/js/custom/*'
     ]
 }
 
@@ -51,11 +54,12 @@ var jqueryVersionCheck = '+function ($) {\n' +
   '  }\n' +
   '}(jQuery);\n\n'
 
-gulp.task('default', ['scss-min', 'js-min'])
+gulp.task('default', ['scss-min', 'js-min', 'slim'])
 
 gulp.task('watch', function () {
   gulp.watch(Paths.SCSS, ['scss-min']);
   gulp.watch(Paths.JS,   ['js-min']);
+  gulp.watch(Paths.SLIM, ['slim']);
 })
 
 gulp.task('docs', ['server'], function () {
@@ -65,7 +69,7 @@ gulp.task('docs', ['server'], function () {
 
 gulp.task('server', function () {
   connect.server({
-    root: 'docs',
+    root: 'cloudfront',
     port: 9001,
     livereload: true
   })
@@ -133,3 +137,13 @@ gulp.task('js-min', ['js'], function () {
     }))
     .pipe(gulp.dest(Paths.DIST))
 })
+
+
+gulp.task('slim', function(){
+  gulp.src(Paths.SLIM)
+    .pipe(slim({
+      pretty: true
+    }))
+    .pipe(gulp.dest(Paths.DIST))
+})
+
