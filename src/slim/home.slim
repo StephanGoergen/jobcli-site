@@ -1,0 +1,145 @@
+doctype html
+html lang="en" 
+  head
+    title Job Search – Command Line | JobCLI
+    meta charset="utf-8" /
+    meta content="IE=edge" http-equiv="X-UA-Compatible" /
+    meta content="width=device-width, initial-scale=1" name="viewport" /
+    meta content=("Search for software development and engineering from the command line.") name="description" /
+    meta content="CLI, command-line interface, careers, jobs, IT, developer, engineer" name="keywords" /
+    meta content=("Stephan Goergen") name="author" /
+    meta content=("JobCLI - Command Line Job Board") property="og:title" /
+    meta content="https://s3.amazonaws.com/aws-website-jobclicom-iq2rf/assets/img/screencast.gif" property="og:image" /
+    meta content="-s_V__936Ic6DOeorGn2m5E0Zx69jGjPQlkR6K8AXjY" name="google-site-verification" /
+    link href="https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600" rel="stylesheet" type="text/css" /
+    link href="assets/css/toolkit-startup.css" rel="stylesheet" /
+    link href="assets/css/application-startup.css" rel="stylesheet" /
+
+
+
+  body
+    #sidebar.stage-shelf.stage-shelf-right.hidden
+      ul.nav.nav-bordered.nav-stacked.flex-column
+        li.nav-header Examples
+        li.nav-item
+          a.nav-link.active href="/"  Product
+        li.nav-item
+          a.nav-link href="/about"  About
+        li.nav-item
+          a.nav-link href="/contact"  Contact
+        li.nav-item
+          a.nav-link href="/docs"  Docs
+        li.nav-divider
+        li.nav-header Corporate
+        li.nav-item
+          a.nav-link href="/employers"  Employers
+
+
+    #stage.stage
+
+      .block.block-inverse.block-fill-height.app-header style=("background-color: #212D40 ;") 
+        .container.py-4.fixed-top.app-navbar
+          nav.navbar.navbar-transparent.navbar-padded.navbar-expand-sm
+
+            a.navbar-brand.mr-auto alt=("Marketing Homepage") href="/" 
+              img.d-inline-block.align-middle alt="jobcli-logo" src="assets/img/jobcli-logo-light.png" style=("height: 50px")
+
+            .d-none.d-md-block.text-uppercase
+              ul.navbar-nav
+                li.nav-item.px-1
+                  a.nav-link.mr-auto alt="Product" href="#" Product
+                li.nav-item.px-1
+                  a.nav-link.mr-auto alt="About" href="/about" About
+                li.nav-item.px-1
+                  a.nav-link.mr-auto alt="Contact" href="/contact" Contact
+                li.nav-item.px-1
+                  a.nav-link.mr-auto alt="Documentation" href="/docs" Docs
+
+            a alt="Employer Login" href="/employers"                   
+              button.btn.btn-primary
+                span.icon.icon-login  Employers
+
+
+            button.navbar-toggler.navbar-toggler-right.hidden-md-up data-distance="-250" data-target="#stage" data-toggle="stage" type="button" 
+              span.navbar-toggler-icon
+
+
+
+
+
+        .block-xs-middle.pb-2 style=("padding-top: 40px;") 
+          .container
+            .row
+              .col-sm-10.col-lg-4
+                h1.block-title Job&nbsp;search from&nbsp;the command&nbsp;line
+                p.lead.mb-4.text-muted
+                  | Stop clicking your way through job boards. Get the raw data right to your command line, then
+                  | <kbd>grep</kbd>, <kbd>cut</kbd> or <kbd>fzf</kbd> job postings however you like.
+
+                p.lead.mb-4.text-muted.mb-5 It's free. No sign-in required.
+
+                .card.bg-transparent.border-white.mb-5
+                  .card-body.text-center
+                    h4
+                      code.text-white.bg-transparent pip install jobcli
+
+              .col-sm-10.col-lg-8.mb-1
+                img.z-depth-5 alt="jobcli-product-screencast" itemprop="screenshot" src="assets/img/screencast.gif" style=("width: 100%;") /
+
+
+
+
+      .block.block.app-footer
+        .container
+          .row
+            .col-md-4.mb-5
+              ul.list-unstyled.list-spaced
+                li.mb-2
+                  h6.text-uppercase About
+                li.text-muted
+                  | Job search sends developers back into the stone age by forcing 
+                  | us to scroll and click through a bunch of websites like regular folks.
+                  | JobCLI was created to deliver job postings to where 
+                  | we are most comfortable: the terminal.
+
+            .col-md-4.mb-5
+              ul.list-unstyled.list-spaced
+                li.mb-2
+                  h6#contact.text-uppercase Contact
+                li.text-muted
+                  | We're always grateful for suggestions on how to improve JobCLI. 
+                  | Shoot us an email to 
+                  a href="mailto:feedback@jobcli.com" feedback@jobcli.com
+
+                li.text-muted
+                  | If you're a recruiter and would like to list a job on JobCLI, 
+                  | contact us anytime at 
+                  a href="mailto:employers@jobcli.com" employers@jobcli.com
+
+            .col-md-2.ml-auto.mb-5
+              ul.list-unstyled.list-spaced
+                li.mb-2
+                  h6.text-uppercase Product
+                li.text-muted
+                  a alt="Documentation" href="https://github.com/jobcli/jobcli-app" 
+                    span.icon.icon-book 
+                    |  Documentation
+
+                li.text-muted
+                  a alt="Repository" href="https://github.com/jobcli/jobcli-app" 
+                    span.icon.icon-github 
+                    |  Repository
+
+
+      script src="assets/js/jquery.min.js" 
+      script src="assets/js/popper.min.js" 
+      script src="assets/js/tether.min.js" 
+      script src="assets/js/application.js" 
+      script src="assets/js/toolkit.js" 
+      javascript:
+        | $(function() {
+        | while (window.BS && window.BS.loader && window.BS.loader.length) {
+        | (window.BS.loader.pop())()
+        | }
+        | })
+
