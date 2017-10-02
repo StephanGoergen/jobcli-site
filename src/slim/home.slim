@@ -1,19 +1,19 @@
 doctype html
-html lang="en" 
+html lang="en"
   head
     title Job Search – Command Line | JobCLI
-    meta charset="utf-8" /
-    meta content="IE=edge" http-equiv="X-UA-Compatible" /
-    meta content="width=device-width, initial-scale=1" name="viewport" /
-    meta content=("Search for software development and engineering from the command line.") name="description" /
-    meta content="CLI, command-line interface, careers, jobs, IT, developer, engineer" name="keywords" /
-    meta content=("Stephan Goergen") name="author" /
-    meta content=("JobCLI - Command Line Job Board") property="og:title" /
-    meta content="https://s3.amazonaws.com/aws-website-jobclicom-iq2rf/assets/img/screencast.gif" property="og:image" /
-    meta content="-s_V__936Ic6DOeorGn2m5E0Zx69jGjPQlkR6K8AXjY" name="google-site-verification" /
-    link href="https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600" rel="stylesheet" type="text/css" /
-    link href="assets/css/toolkit-startup.css" rel="stylesheet" /
-    link href="assets/css/application-startup.css" rel="stylesheet" /
+    meta charset="utf-8"
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    meta content="width=device-width, initial-scale=1" name="viewport"
+    meta content=("Search for software development and engineering from the command line.") name="description"
+    meta content="CLI, command-line interface, careers, jobs, IT, developer, engineer" name="keywords"
+    meta content=("Stephan Goergen") name="author"
+    meta content=("JobCLI - Command Line Job Board") property="og:title"
+    meta content="https://s3.amazonaws.com/aws-website-jobclicom-iq2rf/assets/img/screencast.gif" property="og:image"
+    meta content="-s_V__936Ic6DOeorGn2m5E0Zx69jGjPQlkR6K8AXjY" name="google-site-verification"
+    link href="https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600" rel="stylesheet" type="text/css"
+    link href="assets/css/toolkit-startup.css" rel="stylesheet"
+    link href="assets/css/application-startup.css" rel="stylesheet"
 
 
 
@@ -37,42 +37,43 @@ html lang="en"
 
     #stage.stage
 
-      .block.block-inverse.block-fill-height.app-header style=("background-color: #212D40 ;") 
+      .block.block-inverse.block-fill-height.app-header style=("background: linear-gradient(#212D40, #3B6064);")
         .container.py-4.fixed-top.app-navbar
-          nav.navbar.navbar-transparent.navbar-padded.navbar-expand-sm
+          nav.navbar.navbar-transparent.navbar-padded.navbar-expand-sm.align-items-center
 
-            a.navbar-brand.mr-auto alt=("Marketing Homepage") href="/" 
-              img.d-inline-block.align-middle alt="jobcli-logo" src="assets/img/jobcli-logo-light.png" style=("height: 50px")
+            a.navbar-brand.mr-auto alt=("Marketing Homepage") href="/"
+              img.d-inline-block alt="jobcli-logo" src="assets/img/jobcli-logo-light.png" style=("height: 35px")
 
             .d-none.d-md-block.text-uppercase
-              ul.navbar-nav
+              ul.navbar-nav.align-items-center
                 li.nav-item.px-1
-                  a.nav-link.mr-auto alt="Product" href="#" Product
+                  a.nav-link.mr-auto.active alt="Product" href="/" Product
                 li.nav-item.px-1
                   a.nav-link.mr-auto alt="About" href="/about" About
                 li.nav-item.px-1
                   a.nav-link.mr-auto alt="Contact" href="/contact" Contact
                 li.nav-item.px-1
                   a.nav-link.mr-auto alt="Documentation" href="/docs" Docs
+                li.nav-item.px-1
+                  a.nav-link.mr-auto alt="Employer Login" href="/employers"
+                    button.btn.btn-primary
+                      span.icon.icon-login &nbsp;Employers
 
-            a alt="Employer Login" href="/employers"                   
-              button.btn.btn-primary
-                span.icon.icon-login  Employers
 
-
-            button.navbar-toggler.navbar-toggler-right.hidden-md-up data-distance="-250" data-target="#stage" data-toggle="stage" type="button" 
+            button.navbar-toggler.navbar-toggler-right.hidden-md-up data-distance="-250" data-target="#stage" data-toggle="stage" type="button"
               span.navbar-toggler-icon
 
 
 
 
 
-        .block-xs-middle.pb-2 style=("padding-top: 40px;") 
+        .block-xs-middle.pb-3 style=("padding-top: 40px;")
           .container
             .row
               .col-sm-10.col-lg-4
-                h1.block-title Job&nbsp;search from&nbsp;the command&nbsp;line
-                p.lead.mb-4.text-muted
+                h1.block-title.mb-4 JobCLI
+                h2. Job&nbsp;search from&nbsp;the command&nbsp;line
+                p.lead.mb-3.text-muted
                   | Stop clicking your way through job boards. Get the raw data right to your command line, then
                   | <kbd>grep</kbd>, <kbd>cut</kbd> or <kbd>fzf</kbd> job postings however you like.
 
@@ -89,17 +90,17 @@ html lang="en"
 
 
 
-      .block.block.app-footer
+      .block.block.app-footer.inverse
         .container
           .row
             .col-md-4.mb-5
               ul.list-unstyled.list-spaced
                 li.mb-2
-                  h6.text-uppercase About
+                  h6#about.text-uppercase About
                 li.text-muted
-                  | Job search sends developers back into the stone age by forcing 
+                  | Job search sends developers back into the stone age by forcing
                   | us to scroll and click through a bunch of websites like regular folks.
-                  | JobCLI was created to deliver job postings to where 
+                  | JobCLI was created to deliver job postings to where
                   | we are most comfortable: the terminal.
 
             .col-md-4.mb-5
@@ -107,39 +108,32 @@ html lang="en"
                 li.mb-2
                   h6#contact.text-uppercase Contact
                 li.text-muted
-                  | We're always grateful for suggestions on how to improve JobCLI. 
-                  | Shoot us an email to 
-                  a href="mailto:feedback@jobcli.com" feedback@jobcli.com
+                  | Send us your suggestions on how to improve JobCLI to
+                  a href="mailto:feedback@jobcli.com"  feedback@jobcli.com
 
                 li.text-muted
-                  | If you're a recruiter and would like to list a job on JobCLI, 
-                  | contact us anytime at 
-                  a href="mailto:employers@jobcli.com" employers@jobcli.com
+                  | If you'd like to list a tech job on JobCLI,
+                  | contact us anytime at
+                  a href="mailto:employers@jobcli.com"  employers@jobcli.com
 
             .col-md-2.ml-auto.mb-5
               ul.list-unstyled.list-spaced
                 li.mb-2
                   h6.text-uppercase Product
-                li.text-muted
-                  a alt="Documentation" href="https://github.com/jobcli/jobcli-app" 
-                    span.icon.icon-book 
-                    |  Documentation
+                li
+                  span.icon.icon-book &nbsp;
+                  a alt="Documentation" href="/docs" Docs
+                li
+                  span.icon.icon-github &nbsp;
+                  a alt="Repository" href="https://github.com/jobcli/jobcli-app" Repository
+                li
+                  span.icon.icon-login &nbsp;
+                  a alt="Employers" href="/employers" Employers
 
-                li.text-muted
-                  a alt="Repository" href="https://github.com/jobcli/jobcli-app" 
-                    span.icon.icon-github 
-                    |  Repository
 
-
-      script src="assets/js/jquery.min.js" 
-      script src="assets/js/popper.min.js" 
-      script src="assets/js/tether.min.js" 
-      script src="assets/js/application.js" 
-      script src="assets/js/toolkit.js" 
-      javascript:
-        | $(function() {
-        | while (window.BS && window.BS.loader && window.BS.loader.length) {
-        | (window.BS.loader.pop())()
-        | }
-        | })
-
+      script src="assets/js/jquery.min.js"
+      script src="assets/js/popper.min.js"
+      script src="assets/js/tether.min.js"
+      script src="assets/js/application.js"
+      script src="assets/js/toolkit.js"
+      javascript: $(function() {while (window.BS && window.BS.loader && window.BS.loader.length) {(window.BS.loader.pop())()}})
