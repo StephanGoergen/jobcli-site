@@ -1,7 +1,7 @@
 doctype html
 html lang="en"
   head
-    title Job Search – Command Line | JobCLI
+    title JobCLI | Job Search – Command Line
     meta charset="utf-8"
     meta content="IE=edge" http-equiv="X-UA-Compatible"
     meta content="width=device-width, initial-scale=1" name="viewport"
@@ -15,33 +15,29 @@ html lang="en"
     link href="assets/css/toolkit-startup.css" rel="stylesheet"
     link href="assets/css/application-startup.css" rel="stylesheet"
 
-
-
   body
     #sidebar.stage-shelf.stage-shelf-right.hidden
       ul.nav.nav-bordered.nav-stacked.flex-column
-        li.nav-header Examples
+        li.nav-header JobCLI
         li.nav-item
           a.nav-link.active href="/"  Product
         li.nav-item
-          a.nav-link href="/about"  About
+          a.nav-link href="#about"  About
         li.nav-item
-          a.nav-link href="/contact"  Contact
+          a.nav-link href="#contact"  Contact
         li.nav-item
-          a.nav-link href="/docs"  Docs
-        li.nav-divider
-        li.nav-header Corporate
+          a.nav-link href="https://github.com/jobcli/jobcli-app/blob/master/README.md"  Docs
         li.nav-item
-          a.nav-link href="/employers"  Employers
+          a.nav-link href="/"  Employers
 
 
     #stage.stage
 
-      .block.block-inverse.block-fill-height.app-header style=("background: linear-gradient(#212D40, #111114);")
+      .block.block-inverse.block-fill-height.app-header style=("background-color: #212D40;")
         .container.py-4.fixed-top.app-navbar
           nav.navbar.navbar-transparent.navbar-padded.navbar-expand-sm.align-items-center
 
-            a.navbar-brand.mr-auto alt=("Marketing Homepage") href="/"
+            a.navbar-brand.mr-auto alt="Marketing Homepage" href="/"
               img.d-inline-block alt="jobcli-logo" src="assets/img/jobcli-logo-light.png" style=("height: 35px")
 
             .d-none.d-md-block.text-uppercase
@@ -49,13 +45,16 @@ html lang="en"
                 li.nav-item.px-1
                   a.nav-link.mr-auto.active alt="Product" href="/" Product
                 li.nav-item.px-1
-                  a.nav-link.mr-auto alt="About" href="/about" About
+                  a.nav-link.mr-auto alt="About" href="#about" About
                 li.nav-item.px-1
-                  a.nav-link.mr-auto alt="Contact" href="/contact" Contact
+                  a.nav-link.mr-auto alt="Contact" href="#contact" Contact
+                // buttons
                 li.nav-item.px-1
-                  a.nav-link.mr-auto alt="Documentation" href="/docs" Docs
+                  a.nav-link.mr-auto alt="Documentation" href="https://github.com/jobcli/jobcli-app/blob/master/README.md"
+                    button.btn.btn-secondary
+                      span.icon.icon-github &nbsp;Docs
                 li.nav-item.px-1
-                  a.nav-link.mr-auto alt="Employer Login" href="/employers"
+                  a.nav-link.mr-auto alt="Employer Login" href="/"
                     button.btn.btn-primary
                       span.icon.icon-login &nbsp;Employers
 
@@ -104,42 +103,50 @@ html lang="en"
                 li.mb-2
                   h6#about.text-uppercase About
                 li.text-muted
-                  | Job search sends developers back into the stone age by forcing
-                  | us to scroll and click through a bunch of websites like regular folks.
-                  | JobCLI was created to deliver job postings to where
-                  | we are most comfortable: the terminal.
+                  ' Job search sends developers back into the stone age by forcing
+                  ' us to scroll and click through a bunch of websites.
+                  ' JobCLI was created to deliver job postings to where
+                  ' we are most comfortable: the terminal.
 
             .col-md-4.mb-5
               ul.list-unstyled.list-spaced
                 li.mb-2
                   h6#contact.text-uppercase Contact
                 li.text-muted
-                  | Send us your suggestions on how to improve JobCLI to
-                  a href="mailto:feedback@jobcli.com"  feedback@jobcli.com
+                  ' Send us your suggestions on how to improve JobCLI to
+                  a href="mailto:feedback@jobcli.com" feedback@jobcli.com
 
                 li.text-muted
-                  | If you'd like to list a tech job on JobCLI,
-                  | contact us anytime at
-                  a href="mailto:employers@jobcli.com"  employers@jobcli.com
+                  ' If you'd like to list a tech job on JobCLI,
+                  ' contact us anytime at
+                  a href="mailto:employers@jobcli.com" employers@jobcli.com
 
             .col-md-2.ml-auto.mb-5
               ul.list-unstyled.list-spaced
                 li.mb-2
-                  h6.text-uppercase Product
-                li
-                  span.icon.icon-book &nbsp;
-                  a alt="Documentation" href="/docs" Docs
+                  h6.text-uppercase
+                    a href="#" Product
                 li
                   span.icon.icon-github &nbsp;
-                  a alt="Repository" href="https://github.com/jobcli/jobcli-app" Repository
+                  a alt="Documentation" href="https://github.com/jobcli/jobcli-app" Docs
                 li
                   span.icon.icon-login &nbsp;
-                  a alt="Employers" href="/employers" Employers
+                  a alt="Employers" href="/" Employers
+
+              a.github-button [
+                  alt="Github Star"
+                  href="https://github.com/jobcli/jobcli-app"
+                  data-size="large"
+                  data-icon="octicon-star"
+                  data-show-count="true"
+                  aria-label="Star jobcli/jobcli-app on GitHub"
+                ] Star
 
 
       script src="assets/js/jquery.min.js"
-      script src="assets/js/popper.min.js"
-      script src="assets/js/tether.min.js"
-      script src="assets/js/application.js"
       script src="assets/js/toolkit.js"
+      script src="assets/js/application.js"
+      script src="assets/js/popper.min.js"
+      script {async defer src=("https://buttons.github.io/buttons.js")}
       javascript: $(function() {while (window.BS && window.BS.loader && window.BS.loader.length) {(window.BS.loader.pop())()}})
+
