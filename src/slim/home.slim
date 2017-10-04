@@ -22,13 +22,17 @@ html lang="en"
         li.nav-item
           a.nav-link.active href="/"  Product
         li.nav-item
-          a.nav-link href="#about"  About
+          a.nav-link href="#about"
+            span.icon.icon-info &nbsp;About
         li.nav-item
-          a.nav-link href="#contact"  Contact
+          a.nav-link href="#contact"
+            span.icon.icon-user &nbsp;Contact
         li.nav-item
-          a.nav-link href="https://github.com/jobcli/jobcli-app/blob/master/README.md"  Docs
+          a.nav-link href="https://github.com/jobcli/jobcli-app/blob/master/README.md"
+            span.icon.icon-github &nbsp;Docs
         li.nav-item
-          a.nav-link href="/"  Employers
+          a.nav-link href="/"
+            span.icon.icon-login &nbsp;Employers
 
 
     #stage.stage
@@ -143,10 +147,11 @@ html lang="en"
                 ] Star
 
 
+      script src="assets/js/popper.min.js"
       script src="assets/js/jquery.min.js"
       script src="assets/js/toolkit.js"
       script src="assets/js/application.js"
-      script src="assets/js/popper.min.js"
-      script {async defer src=("https://buttons.github.io/buttons.js")}
       javascript: $(function() {while (window.BS && window.BS.loader && window.BS.loader.length) {(window.BS.loader.pop())()}})
+
+      script {async defer src=("https://buttons.github.io/buttons.js")}
 
